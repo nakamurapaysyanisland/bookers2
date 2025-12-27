@@ -1,2 +1,8 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<h2>New Book</h2>
+
+<%= from_with model: @book, do |t| %>
+    <p><%= from.label :title %><br>
+    <%= from.text_field :title %></p>
+    </p>
+
+    <% end %>
