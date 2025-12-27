@@ -1,8 +1,10 @@
 <h2>New Book</h2>
 
-<%= from_with model: @book, do |t| %>
-    <p><%= from.label :title %><br>
-    <%= from.text_field :title %></p>
-    </p>
-
+<%= from_with model: @book, do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+    
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
     <% end %>
