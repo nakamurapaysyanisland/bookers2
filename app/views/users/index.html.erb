@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+  <div class="col-4">
+  <h5>asdf</h5>
+  </div>
+
+
+  <div class="col-8">
+    <h2>Users</h2>
+    <table>
+    <tr>
+    <th>image</th>
+    <th>name</th>
+    <th colspan="3"></th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+    <td><%= link_to user_path(user) do %>
+      <%= image_tag user.get_profile_image(50,50) %>
+    <% end %>    
+    </td>
+    <td><%= user %></td>
+    <td><%= link_to 'show', user_path(user.id) %></td>
+    </tr>
+    <% end %>
+    </table>
+  </div>
+
+</div>
