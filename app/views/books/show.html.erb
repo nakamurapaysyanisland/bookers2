@@ -5,19 +5,19 @@
     </div>
     
     <div class="col-8">
-      <h2>Book datail</h2>
+      <h2>Book detail</h2>
       <table>
         <tr>
           <td>
             <%= link_to user_path(@book.user) do %>
-              <% image_tag @book.user.get_profile_image(100,100) %>
+              <%= image_tag @book.user.get_profile_image(100,100) %>
             <% end %>
           </td>
           <td><%= @book.user.name %></td>
           <td><%= @book.title %></td>
           <td><%= @book.body %></td>
           <td><%= link_to 'Edit', edit_book_path(@book) %></td>
-          <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       </table>
 
