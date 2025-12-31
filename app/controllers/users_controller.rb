@@ -21,17 +21,30 @@ class UsersController < ApplicationController
         @user = User.new
         @user = User.id 
         @user = User.save
+        flash[:notice] = "Welcome! You have signed up successfully."
         redirect_to user_path
     end
 
     def update
         @user = User.find(params[:id])
         if @user.update(user_params)
-            redirect_to user_path(@user)
+           flash[:notice] = "You have updated user successfully."
+           redirect_to user_path(@user)
         else
             render :edit
         end
     end
+
+    def destroy
+        reset_session
+        if @user.destroy(user_params)
+           flash[:notice] ="Signed out successfully."
+           redirect_to root_path
+        else
+        
+        end
+    end
+
 
     private
     def user_params
