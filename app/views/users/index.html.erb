@@ -5,28 +5,29 @@
     </div>
     <div class="col-md-8 offset-md-1 pt-2">
       <h2>Users</h2>
-      <table class="table border-top border-bottom">
-        <thead>
-          <tr>
-            <th style="width: 30%">image</th>
-            <th style="width: 40%">name</th>
-            <th style="width: 20%"></th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody class="border-top">
-          <% @users.each do |user| %>
-          <tr>
-            <td>
-              <%= link_to user_path(user) do %>
-               <%= image_tag user.get_profile_image(75,75) %>
-              <% end %>    
-            </td>
-            <td><%= user.name %></td>
-            <td><%= link_to 'show', user_path(user.id) %></td>
-          </tr>
-          <% end %>
-      </table>
+        <table class="table">
+          <thead>
+            <tr class="border-top border-bottom">
+              <th style="width: 30%">image</th>
+              <th style="width: 40%">name</th>
+              <th style="width: 20%"></th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+            <tr class="border-bottom">
+              <td>
+                <%= link_to user_path(user) do %>
+                  <%= image_tag user.get_profile_image(75,75) %>
+                <% end %>    
+              </td>
+              <td><%= user.name %></td>
+              <td><%= link_to 'show', user_path(user.id) %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
     </div>
   </div>
 </div>
