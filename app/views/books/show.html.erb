@@ -19,7 +19,7 @@
           <div style="width: 30%">
           <% if @book.user == current_user %>
             <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-danger btn-sm text-light" %></td>
-            <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success btn-sm text-light" %></td>
+            <td><%= link_to "Destroy", book_path(@book.id), method: :delete, class: "btn btn-success btn-sm text-light", "data-confirm" => "Are you sure?" %></td>
           <% end %>
           </div>
         </tr>
